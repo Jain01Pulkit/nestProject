@@ -1,0 +1,13 @@
+import { Module } from '@nestjs/common';
+import { UsersController } from './users.controller';
+import { UsersService } from './users.service';
+import { TypeOrmModule } from '@nestjs/typeorm';
+import { User } from './user.entity';
+
+@Module({
+  // Repository is a file in which whole database query related work is done.
+  imports: [TypeOrmModule.forFeature([User])], //// This step creates a repository for us bts.
+  controllers: [UsersController],
+  providers: [UsersService],
+})
+export class UsersModule {}
