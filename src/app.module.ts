@@ -10,6 +10,7 @@ import { Report } from './reports/report.entity';
 @Module({
   imports: [
     TypeOrmModule.forRoot({
+      // forRoot configure a module one time. This is either for global service or re-used configuration internally.
       type: 'sqlite',
       // sqlite is a file based database, so there is a db.sqlite file generated in the folder. It will store all the database related things here.
       // We can see raw data in that file.
